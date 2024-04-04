@@ -124,14 +124,15 @@ def prompt_for_tileweight():
 print('''Welcome to Tile Generator 0.1. This script takes the output of Haftetavenscrap's World Generator Plus, and turns it into a tile for the EU4 Random World generator. 
 This script should be placed in the same folder as the generated world folder and .mod file. 
       
-Please enter a name for your world. Keep it short, only letters and numbers.''')
+Please enter a name for your world. Keep it simple, only letters and numbers, dash or underscore.''')
 tilename = input()
-if not re.match(r"^[a-zA-Z0-9]+$", tilename ):
+if not re.match(r"^[a-zA-Z0-9-_]+$", tilename ):
     print('''Invalid name, using "newtile" instead.''')
     tilename = "newtile"
 
 # Initiate file
 filename = tilename+".txt"
+filepath = os.path.join(os.path.dirname(__file__),filename)
 f = open(filename, 'w')
 
 # Write provinces
@@ -167,7 +168,19 @@ if num_regions > 0:
 print("Extra settings can be set manually in the generated textfile.")
 f.write('''
         
-# You can uncomment these settings to activate. They are optional. The explanations come from the pdf guide at https://forumcontent.paradoxplaza.com/public/131201/Tile%20Making%20-%20an%20introduction.pdf, but have been copied in case the file goes offline.
+# You can uncomment these settings to activate. They are optional. The explanations come from the pdf guide at https://forumcontent.paradoxplaza.com/public/131201/Tile%20Making%20-%20an%20introduction.pdf, but have been copied in case the file goes offline.   
+
+# You can name provinces. Works great for wastelands. Find the RGB values using GIMP. May integrate this into script later.
+# province_names = {
+# 	"Great Blade Lake" = { 52 54 41 }
+# }    
+
+# Same for straits, hope to integrate this in a later version.   
+# strait = {
+#   from = { 163 206 224 }
+#	to = { 229 146 169 }
+#	through = { 168 231 155 }
+# }
 
 # The tile will not be rotated. The tile can still be mirrored.
 # do_not_rotate = yes 
