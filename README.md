@@ -14,11 +14,9 @@ Adding a region file is recommended. Here's how:
 
 You can optionally follow the same steps and create "level_1_center_of_trade.txt" and/or "river_estuary_modifier.txt" files. The script will look for these two files and add the selected provinces into the final text file to be used by EU4. Provinces with these bonuses have a higher chance of becoming the center of trade for their region.
 
-Place the script in the same folder as the generated world folder and .mod file. Add your palette files alongside it. Then run.
+Place the script in the same folder as the generated world folder and .mod file. Add your palette files alongside it. Then run. The script will prompt you a few times. Extra settings can be set manually in the generated textfile.
 
-The script will prompt you a few times.
-
-Extra settings can be set manually in the generated textfile.
+The script generates a text file and copies and renames three maps. Place the text file in your EU4 install folder under map\random\tiles. For me, this was "C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis IV\map\random\tiles". Place the three maps inside the data subfolder. You can remove the tiles that come with the game, but definitely leave the water1, water2 and water3 textfiles and associated maps.
 
 ## Limitations
 * Lakes are not recognised, and will be seas instead. I cannot distinguish them based on any files in the Word Generator output.
@@ -26,3 +24,7 @@ Extra settings can be set manually in the generated textfile.
 ## Future plans:
 * Have script look for and apply all supplied province modifier palettes.
 * Fix lakes.
+
+## Thanks to
+* Whoever wrote this guide, highly recommended if you're getting into tiles:  https://forumcontent.paradoxplaza.com/public/131201/Tile%20Making%20-%20an%20introduction.pdf
+* Haftetavenscrap
